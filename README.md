@@ -39,3 +39,11 @@ This quick start needs v0.2.0-beta or newer: earlier releases don't have
 To undo step 2, run `hyperswe detach`. It removes `HYPERSWE.md`, the
 pointer lines and the settings `init` added, and leaves the rest of each
 file as it was. The release notes for each tag list what changed.
+
+## More help
+
+The binary carries its own help. `hyperswe help` lists every command.
+`hyperswe init -h` covers setting up a repository, and `hyperswe loop`
+lists the review loop's verbs; add `-h` to a verb for its flags.
+`hyperswe mcp -h` says how to connect an MCP client, and
+`hyperswe feedback -h` covers sending feedback and turning it off.
