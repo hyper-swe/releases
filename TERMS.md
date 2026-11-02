@@ -131,9 +131,63 @@ share in your feedback.
 
 ## 8. Usage analytics
 
-This version of the Software does not collect or send usage analytics. If a
-future version does, we will update these Terms before it does so, and that
-version will tell you what it collects and how to turn it off.
+In this beta version of the Software, analytics is on by default, and you
+can turn it off at any time. We use analytics to understand which commands
+are used, how reliably they work, and where to focus our improvements.
+
+### What is sent
+
+When a command ends, the Software sends one event with these fields:
+
+- the kind of event;
+- the command, and for some commands the subcommand, that you ran;
+- the feature involved;
+- whether the command succeeded or failed;
+- how long it took, as a range (for example, "1 to 10 seconds");
+- the Software version, your operating system and your processor
+  architecture.
+
+Each of these is a fixed value or a standard release number. Each event
+also carries the time it is received. A few commands, such as `help` and `version`,
+are left out of analytics.
+
+### How to turn analytics off
+
+You can turn analytics off at any time in any of these ways. The HyperSWE
+README and the usage data page of the HyperSWE documentation describe the
+same settings:
+
+- set `DO_NOT_TRACK=1` in your environment;
+- set `HYPERSWE_TELEMETRY=0` in your environment;
+- run a command with the `--no-telemetry` flag; or
+- set `"enabled": false` in the `telemetry.json` file in your HyperSWE
+  configuration directory (`~/.hyperswe`, or the directory named by
+  `HYPERSWE_CONFIG_HOME`).
+
+Any one of these is enough, and it takes precedence over every other
+setting. Turning analytics off stops future events and also turns off the
+update check.
+
+### How analytics is processed
+
+Events are sent to our analytics provider, which stores them in the
+European Union. A list of the service providers we use for analytics is
+available on request at swe@hyperswe.com.
+
+### Retention
+
+Our analytics provider stores analytics data in the European Union for up
+to five years, as its [privacy policy](https://aptabase.com/legal/privacy)
+states.
+
+### Legal basis and your rights
+
+We process analytics data on the basis of our legitimate interest in
+understanding and improving the Software, as described in this section.
+You can object at any time by turning analytics off. You also have the
+right to complain to the data protection authority where you live or work.
+
+For questions about analytics, contact us at swe@hyperswe.com.
 
 ## 9. Update check
 
@@ -153,7 +207,8 @@ You can turn the update check off at any time in any of these ways:
 - set `DO_NOT_TRACK=1` in your environment; or
 - set `"enabled": false` in your `updatecheck.json` file.
 
-The update check is separate from usage analytics.
+Any of the settings that turn off usage analytics (section 8) also turn off
+the update check.
 
 ## 10. Disclaimer of warranties
 
