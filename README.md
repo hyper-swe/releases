@@ -210,6 +210,35 @@ options.
 
 Detach does not uninstall the suite commands.
 
+## Turn off usage data
+
+HyperSWE sends usage data when a command finishes, to show which commands
+are used and how reliably they work. It is on by default.
+
+Each event holds the kind of event, the command (and for `loop` and
+`feedback` the subcommand), the feature involved, whether the command
+succeeded, how long it took as a range, the HyperSWE version, and your
+operating system and processor architecture. Each is a fixed value or a
+standard release number.
+
+To turn it off, use any one of these settings; it takes precedence over
+every other setting:
+
+- Set `DO_NOT_TRACK=1` in the environment:
+
+  ```sh
+  export DO_NOT_TRACK=1
+  ```
+
+- Set `HYPERSWE_TELEMETRY=0` in the environment.
+- Pass `--no-telemetry` to a command.
+- Put `{"enabled": false}` in `telemetry.json` in the config directory
+  (`~/.hyperswe`, or the directory `HYPERSWE_CONFIG_HOME` names).
+
+Each of these settings also turns off the update check. Section 8 of the
+[HyperSWE Beta Terms of Use](https://github.com/hyper-swe/releases/blob/main/TERMS.md)
+covers usage data in full.
+
 ## Check beta status
 
 HyperSWE is in beta.
